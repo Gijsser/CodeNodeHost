@@ -22,9 +22,10 @@ namespace json_file
             InitializeComponent();
         }
 
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(json.ReadJson().Name);
+            MessageBox.Show(json.ReadJson(port).Name);
 
 
         }

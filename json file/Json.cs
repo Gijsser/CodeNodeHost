@@ -23,9 +23,9 @@ namespace json_file
 
         }
 
-        public Json ReadJson()
+        public Json ReadJson(SerialPort port)
         {
-            return JsonConvert.DeserializeObject<Json>(File.ReadAllText(@"D:\HBO\Semester 4\PTT\jsontekst2.json"));
+            return JsonConvert.DeserializeObject<Json>(port.ReadLine());   //File.ReadAllText(@"D:\HBO\Semester 4\PTT\jsontekst2.json")
 
             //// deserialize JSON directly from a file
             //using (StreamReader file = File.OpenText(@"D:\HBO\Semester 4\PTT\jsontekst.json"))
