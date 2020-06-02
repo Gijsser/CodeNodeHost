@@ -18,9 +18,6 @@ namespace Host
         public int Data { get; set; }
 
 
-
-
-
         public Json()
         {
 
