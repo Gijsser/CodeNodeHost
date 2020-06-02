@@ -18,14 +18,13 @@ namespace Host
         //SerialPort port = new SerialPort("COM3", 9600);
         string path;
 
-        bool isConnected = false;
-        String[] ports;
+        //bool isConnected = false;
+        string[] ports;
         SerialPort port;
         public Form1()
         {
             InitializeComponent();
             GetAvailableComPorts();
-
 
         }
         void GetAvailableComPorts()
@@ -71,6 +70,10 @@ namespace Host
             {
                 MessageBox.Show(ex.Message);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             finally
             {
                 port.Close();
@@ -103,6 +106,18 @@ namespace Host
                 }
             }
 
+        }
+
+        private void cBComPoort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                port = new SerialPort(cBComPoort.SelectedItem.ToString(), 9600);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //private void button1_Click(object sender, EventArgs e)

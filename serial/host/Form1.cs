@@ -13,6 +13,7 @@ namespace host
 {
     public partial class Form1 : Form
     {
+        Serial serial = new Serial();
         bool isConnected = false;
         String[] ports;
         SerialPort port;
@@ -31,6 +32,8 @@ namespace host
                     coboCommunication.SelectedItem = ports[0];
                 }
             }
+
+            //serial.port = SerialPort.;
         }
 
         void GetAvailableComPorts()
@@ -38,17 +41,11 @@ namespace host
             ports = SerialPort.GetPortNames();
         }
 
-
-
-        void SendData()
+        private void sendButton_Click(object sender, EventArgs e)
         {
             try
             {
-                if(!port.IsOpen)
-                {
-                    port.Open();
-                    port.Write("");
-                }
+                serial.SendData("");
             }
             catch (Exception ex)
             {
@@ -56,14 +53,9 @@ namespace host
             }
         }
 
-        void ReceiveData()
+        private void coboCommunication_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void sendButton_Click(object sender, EventArgs e)
-        {
-            SendData();
+            serial.port = port;
         }
     }
 }

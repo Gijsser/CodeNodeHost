@@ -76,6 +76,7 @@
             this.cBComPoort.Name = "cBComPoort";
             this.cBComPoort.Size = new System.Drawing.Size(121, 24);
             this.cBComPoort.TabIndex = 4;
+            this.cBComPoort.SelectedIndexChanged += new System.EventHandler(this.cBComPoort_SelectedIndexChanged);
             // 
             // label1
             // 

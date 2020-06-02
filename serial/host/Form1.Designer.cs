@@ -40,6 +40,7 @@
             this.coboCommunication.Name = "coboCommunication";
             this.coboCommunication.Size = new System.Drawing.Size(121, 24);
             this.coboCommunication.TabIndex = 0;
+            this.coboCommunication.SelectedIndexChanged += new System.EventHandler(this.coboCommunication_SelectedIndexChanged);
             // 
             // inputRichTextBox
             // 
