@@ -1,0 +1,10 @@
+D:\school\semester 4\Proftaak\C#_projects\host\host\bin\Debug\host.exe.config
+D:\school\semester 4\Proftaak\C#_projects\host\host\bin\Debug\host.exe
+D:\school\semester 4\Proftaak\C#_projects\host\host\bin\Debug\host.pdb
+D:\school\semester 4\Proftaak\C#_projects\host\host\obj\Debug\host.csprojAssemblyReference.cache
+D:\school\semester 4\Proftaak\C#_projects\host\host\obj\Debug\host.Form1.resources
+D:\school\semester 4\Proftaak\C#_projects\host\host\obj\Debug\host.Properties.Resources.resources
+D:\school\semester 4\Proftaak\C#_projects\host\host\obj\Debug\host.csproj.GenerateResource.cache
+D:\school\semester 4\Proftaak\C#_projects\host\host\obj\Debug\host.csproj.CoreCompileInputs.cache
+D:\school\semester 4\Proftaak\C#_projects\host\host\obj\Debug\host.exe
+D:\school\semester 4\Proftaak\C#_projects\host\host\obj\Debug\host.pdb
