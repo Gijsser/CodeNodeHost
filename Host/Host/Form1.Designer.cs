@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSendFile = new System.Windows.Forms.Button();
             this.btnMakeJson = new System.Windows.Forms.Button();
             this.btnSelectJson = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this.tbID = new System.Windows.Forms.TextBox();
             this.tbAdres = new System.Windows.Forms.TextBox();
             this.tbName = new System.Windows.Forms.TextBox();
+            this.ReadTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnSendFile
@@ -119,6 +121,12 @@
             this.tbName.TabIndex = 9;
             this.tbName.Text = "Name";
             // 
+            // ReadTimer
+            // 
+            this.ReadTimer.Enabled = true;
+            this.ReadTimer.Interval = 1000;
+            this.ReadTimer.Tick += new System.EventHandler(this.ReadTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -151,6 +159,7 @@
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.TextBox tbAdres;
         private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.Timer ReadTimer;
     }
 }
 

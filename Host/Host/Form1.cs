@@ -89,7 +89,6 @@ namespace Host
                 Console.WriteLine(json.ReadJson(port).BRet);
                 Console.WriteLine(json.ReadJson(port).Data);
             }
-
         }
 
         private void ReadTimer_Tick(object sender, EventArgs e)
