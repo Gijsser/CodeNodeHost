@@ -8,3 +8,12 @@ D:\school\semester 4\Proftaak\C#_projects\host\host\obj\Debug\host.csproj.Genera
 D:\school\semester 4\Proftaak\C#_projects\host\host\obj\Debug\host.csproj.CoreCompileInputs.cache
 D:\school\semester 4\Proftaak\C#_projects\host\host\obj\Debug\host.exe
 D:\school\semester 4\Proftaak\C#_projects\host\host\obj\Debug\host.pdb
+D:\HBO\Semester 4\PTT\GITT\CodeNodeHost\serial\host\bin\Debug\host.exe.config
+D:\HBO\Semester 4\PTT\GITT\CodeNodeHost\serial\host\bin\Debug\host.exe
+D:\HBO\Semester 4\PTT\GITT\CodeNodeHost\serial\host\bin\Debug\host.pdb
+D:\HBO\Semester 4\PTT\GITT\CodeNodeHost\serial\host\obj\Debug\host.csprojAssemblyReference.cache
+D:\HBO\Semester 4\PTT\GITT\CodeNodeHost\serial\host\obj\Debug\host.Form1.resources
+D:\HBO\Semester 4\PTT\GITT\CodeNodeHost\serial\host\obj\Debug\host.Properties.Resources.resources
+D:\HBO\Semester 4\PTT\GITT\CodeNodeHost\serial\host\obj\Debug\host.csproj.GenerateResource.cache
+D:\HBO\Semester 4\PTT\GITT\CodeNodeHost\serial\host\obj\Debug\host.exe
+D:\HBO\Semester 4\PTT\GITT\CodeNodeHost\serial\host\obj\Debug\host.pdb

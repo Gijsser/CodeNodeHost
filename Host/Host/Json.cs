@@ -34,7 +34,7 @@ namespace Host
             //}
         }
 
-        public void MakeJson()
+        public void MakeJson(string path)
         {
             List<Data> data = new List<Data>();
             data.Add(new Data()
@@ -43,7 +43,7 @@ namespace Host
                 SSN = 2,
                 Message = "A Message"
             });
-            using (StreamWriter file = File.CreateText(@"D:\HBO\Semester 4\PTT\jsontekst3.json"))
+            using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 //serialize object directly into file stream
