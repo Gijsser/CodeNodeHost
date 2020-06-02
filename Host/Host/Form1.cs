@@ -1,5 +1,5 @@
 ﻿using System;
-using System.IO.Ports;
+//using System.IO.Ports;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +15,13 @@ namespace Host
     public partial class Form1 : Form
     {
         Json json = new Json();
+        Serial serial = new Serial();
         //SerialPort port = new SerialPort("COM3", 9600);
         string path;
 
         //bool isConnected = false;
         string[] ports;
-        SerialPort port;
+        //SerialPort port;
         public Form1()
         {
             InitializeComponent();
@@ -29,9 +30,9 @@ namespace Host
         }
         void GetAvailableComPorts()
         {
-            ports = SerialPort.GetPortNames();
+            ports = serial.GetPorts();
 
-            foreach (string port in ports) // miss niet hier neer zetten
+            foreach (string port in ports)
             {
                 cBComPoort.Items.Add(port);
                 if (ports[0] != null)
@@ -55,11 +56,11 @@ namespace Host
         {
             try
             {
-                if (!port.IsOpen)
+                if (!serial.GetPort().IsOpen)
                 {
-                    port.Open();
-                    json.SendTextFile(port, path);
-                    Console.WriteLine(port.ReadLine());
+                    serial.GetPort().Open();
+                    json.SendTextFile(serial.GetPort(), path);
+                    Console.WriteLine(serial.GetPort().ReadLine());
                 }
             }
             catch (DirectoryNotFoundException ex)
@@ -76,18 +77,18 @@ namespace Host
             }
             finally
             {
-                port.Close();
+                serial.GetPort().Close();
             }
         }
         public void ReadJson()
         {
-            if (port.IsOpen
-                && port.BytesToRead > 0)
+            if (serial.GetPort().IsOpen
+                && serial.GetPort().BytesToRead > 0)
             {
-                Console.WriteLine(json.ReadJson(port).sensNr);
-                Console.WriteLine(json.ReadJson(port).instNr);
-                Console.WriteLine(json.ReadJson(port).BRet);
-                Console.WriteLine(json.ReadJson(port).Data);
+                Console.WriteLine(json.ReadJson(serial.GetPort()).sensNr);
+                Console.WriteLine(json.ReadJson(serial.GetPort()).instNr);
+                Console.WriteLine(json.ReadJson(serial.GetPort()).BRet);
+                Console.WriteLine(json.ReadJson(serial.GetPort()).Data);
             }
         }
 
@@ -129,7 +130,7 @@ namespace Host
         {
             try
             {
-                port = new SerialPort(cBComPoort.SelectedItem.ToString(), 9600);
+                serial.SetPort(cBComPoort.SelectedItem.ToString());
             }
             catch (Exception ex)
             {
