@@ -34,20 +34,14 @@ namespace Host
             //}
         }
 
-        public void MakeJson(string path)
+        public void MakeJson(string path, Data data)
         {
-            List<Data> data = new List<Data>();
-            data.Add(new Data()
-            {
-                Id = 1,
-                SSN = 2,
-                Message = "A Message"
-            });
+            data.Add(data);
             using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 //serialize object directly into file stream
-                serializer.Serialize(file, data);
+                serializer.Serialize(file, data.Json);
             }
         }
         public void SendTextFile(SerialPort port, string FileName)

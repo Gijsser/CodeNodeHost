@@ -26,7 +26,7 @@ namespace Host
             InitializeComponent();
             GetAvailableComPorts();
 
-         
+
         }
         void GetAvailableComPorts()
         {
@@ -48,7 +48,7 @@ namespace Host
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 path = openFileDialog.FileName;
-                
+
             }
         }
 
@@ -79,25 +79,30 @@ namespace Host
 
         private void btnMakeJson_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
-            if (folderBrowser.ShowDialog() == DialogResult.OK)
+            int id = 0;
+            if (Int32.TryParse(tbID.Text, out id))
             {
-                string filePath = folderBrowser.SelectedPath;
-                filePath += "\\" + tBFileName.Text + ".json";
-                try
+                Data data = new Data(tbName.Text, tbAdres.Text, id);
+                FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+                if (folderBrowser.ShowDialog() == DialogResult.OK)
                 {
-                    json.MakeJson(filePath);
-                }
-                catch (DirectoryNotFoundException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                catch (ArgumentOutOfRangeException ex)
-                {
-                    MessageBox.Show(ex.Message);
+                    string filePath = folderBrowser.SelectedPath;
+                    filePath += "\\" + tBFileName.Text + ".json";
+                    try
+                    {
+                        json.MakeJson(filePath, data);
+                    }
+                    catch (DirectoryNotFoundException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    catch (ArgumentOutOfRangeException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
-            
+
         }
 
         //private void button1_Click(object sender, EventArgs e)
