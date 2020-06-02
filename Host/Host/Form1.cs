@@ -31,7 +31,7 @@ namespace Host
         {
             ports = SerialPort.GetPortNames();
 
-            foreach (string port in ports) // miss niet hier neer zetten
+            foreach (string port in ports)
             {
                 cBComPoort.Items.Add(port);
                 if (ports[0] != null)
@@ -106,6 +106,24 @@ namespace Host
                 }
             }
 
+        }
+        public void ReadJson()
+        {
+            if (port.IsOpen
+                && port.BytesToRead > 0)
+            {
+                Console.WriteLine(json.ReadJson(port).sensNr);
+                Console.WriteLine(json.ReadJson(port).instNr);
+                Console.WriteLine(json.ReadJson(port).BRet);
+                Console.WriteLine(json.ReadJson(port).Data);
+            }
+
+        }
+
+        private void ReadTimer_Tick(object sender, EventArgs e)
+        {
+            ReadJson();
+            Console.WriteLine("test");
         }
 
         private void cBComPoort_SelectedIndexChanged(object sender, EventArgs e)
