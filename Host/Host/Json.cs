@@ -11,6 +11,7 @@ namespace Host
 {
     public class Json
     {
+        public List<DataJson> Data { get => Data; set => Data = value; }
         public Json()
         {
 
@@ -30,12 +31,18 @@ namespace Host
 
         public void MakeJson(string path, DataJson data)
         {
-            data.Add(data);
+            if (data == null)
+            {
+                throw new ArgumentNullException("Data cant be null");
+            }
+
+            Data.Add(data);
+
             using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 //serialize object directly into file stream
-                serializer.Serialize(file, data.Json);
+                serializer.Serialize(file, Data);
             }
         }
         public void SendTextFile(SerialPort port, string FileName)
