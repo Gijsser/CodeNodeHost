@@ -19,6 +19,7 @@ namespace Host
 
         public DataJson ReadJson(ISerialPort port)
         {
+            // "{ \"sensNr\":1,\"instNr\":13,\"bRet\":20,\"data\":[48756080,2302038]}"
             return JsonConvert.DeserializeObject<DataJson>(port.ReadLine());   //File.ReadAllText(@"D:\HBO\Semester 4\PTT\jsontekst2.json")
 
             //// deserialize JSON directly from a file

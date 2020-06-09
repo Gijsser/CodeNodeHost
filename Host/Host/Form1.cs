@@ -25,9 +25,11 @@ namespace Host
         //SerialPort port;
         public Form1()
         {
-            serialPort = new SerialPortAdapter(serial.GetPort());
+            
             InitializeComponent();
             GetAvailableComPorts();
+            serialPort = new SerialPortAdapter(serial.GetPort());
+
 
         }
         void GetAvailableComPorts()
@@ -84,45 +86,43 @@ namespace Host
         }
         public void ReadJson()
         {
-            if (serial.GetPort().IsOpen && serial.GetPort().BytesToRead > 0)
-            {
-                var result = json.ReadJson(serialPort);
-                Console.WriteLine(result.SensNr);
-                Console.WriteLine(result.InstNr);
-                Console.WriteLine(result.BRet);
-                Console.WriteLine(result.Data);
-            }
+            var result = json.ReadJson(serialPort);
+            Console.WriteLine(result.SensNr);
+            Console.WriteLine(result.InstNr);
+            Console.WriteLine(result.BRet);
+            Console.WriteLine(result.Data);
+
         }
 
         private void ReadTimer_Tick(object sender, EventArgs e)
         {
             ReadJson();
-            Console.WriteLine("test");
+            Console.WriteLine("test1");
         }
 
         private void btnMakeJson_Click(object sender, EventArgs e)
         {
-            
-                DataJson data = new DataJson((int)nUDSenNr.Value, (int)nUDInstNr.Value, (int)nUDBRet.Value, new List<int> { (int)nUDData.Value }.ToArray());
-                FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
-                if (folderBrowser.ShowDialog() == DialogResult.OK)
+
+            DataJson data = new DataJson((int)nUDSenNr.Value, (int)nUDInstNr.Value, (int)nUDBRet.Value, new List<int> { (int)nUDData.Value }.ToArray());
+            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+            if (folderBrowser.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = folderBrowser.SelectedPath;
+                filePath += "\\" + tBFileName.Text + ".json";
+                try
                 {
-                    string filePath = folderBrowser.SelectedPath;
-                    filePath += "\\" + tBFileName.Text + ".json";
-                    try
-                    {
-                        json.MakeJson(filePath, data);
-                    }
-                    catch (DirectoryNotFoundException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    catch (ArgumentOutOfRangeException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                    json.MakeJson(filePath, data);
                 }
-            
+                catch (DirectoryNotFoundException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
 
         }
 

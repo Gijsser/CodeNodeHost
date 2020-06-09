@@ -68,14 +68,14 @@ void tests() {
   //
   // Most of the time, you can rely on the implicit casts.
   // In other case, you can do root["time"].as<long>();
-  const char* sensor = doc["sensor"];
-  long time = doc["time"];
-  double latitude = doc["data"][0];
-  double longitude = doc["data"][1];
+  int SensNr = doc["SensNr"];
+  int InstNr = doc["InstNr"];
+  int BRet = doc["BRet"];
+  //int[] Data = doc["Data"];
 
   // Print values.
-  Serial.println(sensor);
-  Serial.println(time);
-  Serial.println(latitude, 6);
-  Serial.println(longitude, 6);
+  Serial.println(SensNr);
+  Serial.println(InstNr);
+  Serial.println(BRet);
+  //Serial.println(longitude, 6);
 }
