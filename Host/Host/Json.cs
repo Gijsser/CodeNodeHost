@@ -11,20 +11,14 @@ namespace Host
 {
     public class Json
     {
-        public int SensNr { get; set; }
-        public int InstNr { get; set; }
-        public int BRet { get; set; }
-        public int Data { get; set; }
-
-
         public Json()
         {
 
         }
 
-        public Json ReadJson(SerialPort port)
+        public DataJson ReadJson(SerialPort port)
         {
-            return JsonConvert.DeserializeObject<Json>(port.ReadLine());   //File.ReadAllText(@"D:\HBO\Semester 4\PTT\jsontekst2.json")
+            return JsonConvert.DeserializeObject<DataJson>(port.ReadLine());   //File.ReadAllText(@"D:\HBO\Semester 4\PTT\jsontekst2.json")
 
             //// deserialize JSON directly from a file
             //using (StreamReader file = File.OpenText(@"D:\HBO\Semester 4\PTT\jsontekst.json"))
