@@ -14,7 +14,6 @@ namespace Host
         public int sensNr { get; set; }
         public int instNr { get; set; }
         public int BRet { get; set; }
-
         public int Data { get; set; }
 
 
@@ -35,7 +34,7 @@ namespace Host
             //}
         }
 
-        public void MakeJson(string path, Data data)
+        public void MakeJson(string path, DataJson data)
         {
             data.Add(data);
             using (StreamWriter file = File.CreateText(path))
