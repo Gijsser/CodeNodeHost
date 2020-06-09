@@ -11,8 +11,8 @@ namespace Host
 {
     public class Json
     {
-        public int sensNr { get; set; }
-        public int instNr { get; set; }
+        public int SensNr { get; set; }
+        public int InstNr { get; set; }
         public int BRet { get; set; }
         public int Data { get; set; }
 

@@ -29,7 +29,7 @@ namespace Host
             }
             else
             {
-                throw new ArgumentNullException("Drink cant be null");
+                throw new ArgumentNullException("Data cant be null");
             }
             //data.Add(new Data()
             //{

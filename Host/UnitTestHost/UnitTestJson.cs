@@ -9,9 +9,9 @@ namespace UnitTestHost
     /// Summary description for UnitTest1
     /// </summary>
     [TestClass]
-    public class UnitTest1
+    public class UnitTestJson
     {
-        public UnitTest1()
+        public UnitTestJson()
         {
             //
             // TODO: Add constructor logic here

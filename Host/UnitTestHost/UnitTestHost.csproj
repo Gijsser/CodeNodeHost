@@ -49,8 +49,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="UnitTestDataJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTestJson.cs" />
+    <Compile Include="UnitTestSerial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
