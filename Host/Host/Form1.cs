@@ -25,11 +25,11 @@ namespace Host
         //SerialPort port;
         public Form1()
         {
-            
+
             InitializeComponent();
             GetAvailableComPorts();
+            serial.SetPort(serial.GetPorts()[0]);
             serialPort = new SerialPortAdapter(serial.GetPort());
-
 
         }
         void GetAvailableComPorts()
@@ -86,11 +86,22 @@ namespace Host
         }
         public void ReadJson()
         {
-            var result = json.ReadJson(serialPort);
-            Console.WriteLine(result.SensNr);
-            Console.WriteLine(result.InstNr);
-            Console.WriteLine(result.BRet);
-            Console.WriteLine(result.Data);
+            try
+            {
+                serialPort.Open();
+                if (serial.GetPort().IsOpen && serial.GetPort().BytesToRead > 0)
+                {
+                    var result = json.ReadJson(serialPort);
+                    Console.WriteLine(result.SensNr);
+                    Console.WriteLine(result.InstNr);
+                    Console.WriteLine(result.BRet);
+                    Console.WriteLine(result.Data);
+                }
+            }
+            finally
+            {
+                serialPort.Close();
+            }
 
         }
 
