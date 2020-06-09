@@ -11,10 +11,10 @@ namespace Host
 {
     public class Json
     {
-        public List<DataJson> Data { get => Data; set => Data = value; }
+        public List<DataJson> Data { get; set; }
         public Json()
         {
-
+            Data = new List<DataJson>();
         }
 
         public DataJson ReadJson(ISerialPort port)
@@ -42,7 +42,7 @@ namespace Host
             {
                 JsonSerializer serializer = new JsonSerializer();
                 //serialize object directly into file stream
-                serializer.Serialize(file, Data);
+                serializer.Serialize(file, data);
             }
         }
         public void SendTextFile(SerialPort port, string FileName)

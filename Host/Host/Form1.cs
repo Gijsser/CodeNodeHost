@@ -84,8 +84,7 @@ namespace Host
         }
         public void ReadJson()
         {
-            if (serial.GetPort().IsOpen
-                && serial.GetPort().BytesToRead > 0)
+            if (serial.GetPort().IsOpen && serial.GetPort().BytesToRead > 0)
             {
                 var result = json.ReadJson(serialPort);
                 Console.WriteLine(result.SensNr);
