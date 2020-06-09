@@ -45,6 +45,14 @@ namespace UnitTestHost
             Assert.AreEqual(result.Data[1], data1);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+           public void TestArgumentNullex()
+        {
+            Json json = new Json();
+            json.MakeJson("",null);
+        }
+
         //[TestMethod]
         //public void TestMakeJson()
         //{
