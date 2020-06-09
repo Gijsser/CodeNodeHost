@@ -17,7 +17,7 @@ namespace Host
 
         }
 
-        public DataJson ReadJson(SerialPort port)
+        public DataJson ReadJson(ISerialPort port)
         {
             return JsonConvert.DeserializeObject<DataJson>(port.ReadLine());   //File.ReadAllText(@"D:\HBO\Semester 4\PTT\jsontekst2.json")
 

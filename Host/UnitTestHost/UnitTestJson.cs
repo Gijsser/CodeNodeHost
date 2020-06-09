@@ -24,16 +24,25 @@ namespace UnitTestHost
         [TestMethod]
         public void TestReadJson()
         {
-            var sensNr = 35;
+            var sensNr = 1;
+            var instNr = 20;
+            var bRet = 30;
+            var data0 = 123456;
+            var data1 = 654321;
+
+
             Json json = new Json();
             //Serial serial = new Serial();
-            Mock<SerialPort> port;
-            port = new Mock<SerialPort>();
+            Mock<ISerialPort> port = new Mock<ISerialPort>();
             //serial.GetPort().Open();
-            port.Setup(p => p.ReadLine()).Returns("{'\"sensNr\":" + sensNr + ",\"instNr\":13,\"bRet\":20,\"data\":[48.756080,2.302038]}");
+            port.Setup(p => p.ReadLine()).Returns("{\"sensNr\":" + sensNr + ",\"instNr\":" + instNr + ",\"bRet\":" + bRet + ",\"data\":[" + data0 + ", " + data1 + "]}");
 
             var result = json.ReadJson(port.Object);
             Assert.AreEqual(result.SensNr, sensNr);
+            Assert.AreEqual(result.InstNr, instNr);
+            Assert.AreEqual(result.BRet, bRet);
+            Assert.AreEqual(result.Data[0], data0);
+            Assert.AreEqual(result.Data[1], data1);
             //
             // TODO: Add test logic here
             //

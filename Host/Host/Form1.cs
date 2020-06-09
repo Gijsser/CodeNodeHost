@@ -16,6 +16,7 @@ namespace Host
     {
         Json json = new Json();
         Serial serial = new Serial();
+        ISerialPort serialPort;
         //SerialPort port = new SerialPort("COM3", 9600);
         string path;
 
@@ -24,6 +25,7 @@ namespace Host
         //SerialPort port;
         public Form1()
         {
+            serialPort = new SerialPortAdapter(serial.GetPort());
             InitializeComponent();
             GetAvailableComPorts();
 
@@ -85,10 +87,11 @@ namespace Host
             if (serial.GetPort().IsOpen
                 && serial.GetPort().BytesToRead > 0)
             {
-                Console.WriteLine(json.ReadJson(serial.GetPort()).SensNr);
-                Console.WriteLine(json.ReadJson(serial.GetPort()).InstNr);
-                Console.WriteLine(json.ReadJson(serial.GetPort()).BRet);
-                Console.WriteLine(json.ReadJson(serial.GetPort()).Data);
+                var result = json.ReadJson(serialPort);
+                Console.WriteLine(result.SensNr);
+                Console.WriteLine(result.InstNr);
+                Console.WriteLine(result.BRet);
+                Console.WriteLine(result.Data);
             }
         }
 
