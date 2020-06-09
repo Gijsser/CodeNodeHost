@@ -95,7 +95,12 @@ namespace Host
                     Console.WriteLine(result.SensNr);
                     Console.WriteLine(result.InstNr);
                     Console.WriteLine(result.BRet);
-                    Console.WriteLine(result.Data);
+                    /*for (int i = 0; i < json.Data.Count; i++)
+                    {
+                        Console.WriteLine(result.Data[i]);
+                    }*/
+                    Console.WriteLine(result.Data[0]);
+                    Console.WriteLine(result.Data[1]);
                 }
             }
             finally

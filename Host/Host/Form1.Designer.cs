@@ -33,7 +33,6 @@
             this.btnMakeJson = new System.Windows.Forms.Button();
             this.btnSelectJson = new System.Windows.Forms.Button();
             this.cBComPoort = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tBFileName = new System.Windows.Forms.TextBox();
             this.ReadTimer = new System.Windows.Forms.Timer(this.components);
             this.nUDData = new System.Windows.Forms.NumericUpDown();
@@ -84,15 +83,6 @@
             this.cBComPoort.Size = new System.Drawing.Size(121, 24);
             this.cBComPoort.TabIndex = 4;
             this.cBComPoort.SelectedIndexChanged += new System.EventHandler(this.cBComPoort_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(281, 267);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "read als file ontvangen is";
             // 
             // tBFileName
             // 
@@ -146,7 +136,6 @@
             this.Controls.Add(this.nUDBRet);
             this.Controls.Add(this.nUDData);
             this.Controls.Add(this.tBFileName);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.cBComPoort);
             this.Controls.Add(this.btnSelectJson);
             this.Controls.Add(this.btnMakeJson);
@@ -168,7 +157,6 @@
         private System.Windows.Forms.Button btnMakeJson;
         private System.Windows.Forms.Button btnSelectJson;
         private System.Windows.Forms.ComboBox cBComPoort;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tBFileName;
         private System.Windows.Forms.Timer ReadTimer;
         private System.Windows.Forms.NumericUpDown nUDData;
