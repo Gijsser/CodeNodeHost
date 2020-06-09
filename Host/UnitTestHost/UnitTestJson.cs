@@ -19,7 +19,7 @@ namespace UnitTestHost
             //
             // TODO: Add constructor logic here
             //
-        }       
+        }
 
         [TestMethod]
         public void TestReadJson()
@@ -43,9 +43,16 @@ namespace UnitTestHost
             Assert.AreEqual(result.BRet, bRet);
             Assert.AreEqual(result.Data[0], data0);
             Assert.AreEqual(result.Data[1], data1);
-            //
-            // TODO: Add test logic here
-            //
         }
+
+        //[TestMethod]
+        //public void TestMakeJson()
+        //{
+        //    Json json = new Json();
+        //    int[] array = { 11, 20 };
+        //    DataJson dataJson = new DataJson(1, 20, 30, array);
+        //    string path = @"D:\HBO\Semester 4\PTT";
+        //    json.MakeJson(path, dataJson);
+        //}
     }
 }
