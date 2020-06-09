@@ -2,6 +2,9 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Host;
+using System.IO.Ports;
+using Moq;
 
 namespace UnitTestHost
 {
@@ -16,51 +19,21 @@ namespace UnitTestHost
             //
             // TODO: Add constructor logic here
             //
-        }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-        #region Additional test attributes
-        //
-        // You can use the following additional attributes as you write your tests:
-        //
-        // Use ClassInitialize to run code before running the first test in the class
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Use ClassCleanup to run code after all tests in a class have run
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Use TestInitialize to run code before running each test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Use TestCleanup to run code after each test has run
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
+        }       
 
         [TestMethod]
-        public void TestMethod1()
+        public void TestReadJson()
         {
+            var sensNr = 35;
+            Json json = new Json();
+            //Serial serial = new Serial();
+            Mock<SerialPort> port;
+            port = new Mock<SerialPort>();
+            //serial.GetPort().Open();
+            port.Setup(p => p.ReadLine()).Returns("{'\"sensNr\":" + sensNr + ",\"instNr\":13,\"bRet\":20,\"data\":[48.756080,2.302038]}");
+
+            var result = json.ReadJson(port.Object);
+            Assert.AreEqual(result.SensNr, sensNr);
             //
             // TODO: Add test logic here
             //

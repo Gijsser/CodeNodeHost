@@ -101,7 +101,7 @@ namespace Host
         private void btnMakeJson_Click(object sender, EventArgs e)
         {
             
-                DataJson data = new DataJson((int)nUDSenNr.Value, (int)nUDInstNr.Value, (int)nUDBRet.Value, (int)nUDData.Value);
+                DataJson data = new DataJson((int)nUDSenNr.Value, (int)nUDInstNr.Value, (int)nUDBRet.Value, new List<int> { (int)nUDData.Value }.ToArray());
                 FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
                 if (folderBrowser.ShowDialog() == DialogResult.OK)
                 {

@@ -7,7 +7,7 @@ using System.IO.Ports;
 
 namespace Host
 {
-    class Serial
+   public class Serial
     {
         SerialPort port;
 
