@@ -85,8 +85,8 @@ namespace Host
             if (serial.GetPort().IsOpen
                 && serial.GetPort().BytesToRead > 0)
             {
-                Console.WriteLine(json.ReadJson(serial.GetPort()).sensNr);
-                Console.WriteLine(json.ReadJson(serial.GetPort()).instNr);
+                Console.WriteLine(json.ReadJson(serial.GetPort()).SensNr);
+                Console.WriteLine(json.ReadJson(serial.GetPort()).InstNr);
                 Console.WriteLine(json.ReadJson(serial.GetPort()).BRet);
                 Console.WriteLine(json.ReadJson(serial.GetPort()).Data);
             }
@@ -100,10 +100,8 @@ namespace Host
 
         private void btnMakeJson_Click(object sender, EventArgs e)
         {
-            int id = 0;
-            if (Int32.TryParse(tbID.Text, out id))
-            {
-                Data data = new Data(tbName.Text, tbAdres.Text, id);
+            
+                DataJson data = new DataJson((int)nUDSenNr.Value, (int)nUDInstNr.Value, (int)nUDBRet.Value, (int)nUDData.Value);
                 FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
                 if (folderBrowser.ShowDialog() == DialogResult.OK)
                 {
@@ -122,7 +120,7 @@ namespace Host
                         MessageBox.Show(ex.Message);
                     }
                 }
-            }
+            
 
         }
 

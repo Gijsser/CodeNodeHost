@@ -35,10 +35,15 @@
             this.cBComPoort = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tBFileName = new System.Windows.Forms.TextBox();
-            this.tbID = new System.Windows.Forms.TextBox();
-            this.tbAdres = new System.Windows.Forms.TextBox();
-            this.tbName = new System.Windows.Forms.TextBox();
             this.ReadTimer = new System.Windows.Forms.Timer(this.components);
+            this.nUDData = new System.Windows.Forms.NumericUpDown();
+            this.nUDBRet = new System.Windows.Forms.NumericUpDown();
+            this.nUDInstNr = new System.Windows.Forms.NumericUpDown();
+            this.nUDSenNr = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDBRet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDInstNr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDSenNr)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSendFile
@@ -97,44 +102,49 @@
             this.tBFileName.TabIndex = 6;
             this.tBFileName.Text = "File Name";
             // 
-            // tbID
-            // 
-            this.tbID.Location = new System.Drawing.Point(382, 158);
-            this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(100, 22);
-            this.tbID.TabIndex = 7;
-            this.tbID.Text = "ID";
-            // 
-            // tbAdres
-            // 
-            this.tbAdres.Location = new System.Drawing.Point(382, 130);
-            this.tbAdres.Name = "tbAdres";
-            this.tbAdres.Size = new System.Drawing.Size(100, 22);
-            this.tbAdres.TabIndex = 8;
-            this.tbAdres.Text = "Adres";
-            // 
-            // tbName
-            // 
-            this.tbName.Location = new System.Drawing.Point(382, 102);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(100, 22);
-            this.tbName.TabIndex = 9;
-            this.tbName.Text = "Name";
-            // 
             // ReadTimer
             // 
             this.ReadTimer.Enabled = true;
             this.ReadTimer.Interval = 1000;
             this.ReadTimer.Tick += new System.EventHandler(this.ReadTimer_Tick);
             // 
+            // nUDData
+            // 
+            this.nUDData.Location = new System.Drawing.Point(382, 158);
+            this.nUDData.Name = "nUDData";
+            this.nUDData.Size = new System.Drawing.Size(120, 22);
+            this.nUDData.TabIndex = 7;
+            // 
+            // nUDBRet
+            // 
+            this.nUDBRet.Location = new System.Drawing.Point(382, 130);
+            this.nUDBRet.Name = "nUDBRet";
+            this.nUDBRet.Size = new System.Drawing.Size(120, 22);
+            this.nUDBRet.TabIndex = 8;
+            // 
+            // nUDInstNr
+            // 
+            this.nUDInstNr.Location = new System.Drawing.Point(382, 102);
+            this.nUDInstNr.Name = "nUDInstNr";
+            this.nUDInstNr.Size = new System.Drawing.Size(120, 22);
+            this.nUDInstNr.TabIndex = 9;
+            // 
+            // nUDSenNr
+            // 
+            this.nUDSenNr.Location = new System.Drawing.Point(382, 73);
+            this.nUDSenNr.Name = "nUDSenNr";
+            this.nUDSenNr.Size = new System.Drawing.Size(120, 22);
+            this.nUDSenNr.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tbName);
-            this.Controls.Add(this.tbAdres);
-            this.Controls.Add(this.tbID);
+            this.Controls.Add(this.nUDSenNr);
+            this.Controls.Add(this.nUDInstNr);
+            this.Controls.Add(this.nUDBRet);
+            this.Controls.Add(this.nUDData);
             this.Controls.Add(this.tBFileName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cBComPoort);
@@ -143,6 +153,10 @@
             this.Controls.Add(this.btnSendFile);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.nUDData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDBRet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDInstNr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDSenNr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,10 +170,11 @@
         private System.Windows.Forms.ComboBox cBComPoort;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tBFileName;
-        private System.Windows.Forms.TextBox tbID;
-        private System.Windows.Forms.TextBox tbAdres;
-        private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Timer ReadTimer;
+        private System.Windows.Forms.NumericUpDown nUDData;
+        private System.Windows.Forms.NumericUpDown nUDBRet;
+        private System.Windows.Forms.NumericUpDown nUDInstNr;
+        private System.Windows.Forms.NumericUpDown nUDSenNr;
     }
 }
 
