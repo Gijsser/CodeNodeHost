@@ -89,7 +89,7 @@ namespace Host
             try
             {
                 serialPort.Open();
-                if (serial.GetPort().IsOpen && serial.GetPort().BytesToRead > 0)
+                if (serial.GetPort().IsOpen )
                 {
                     var result = json.ReadJson(serialPort);
                     Console.WriteLine(result.SensNr);
